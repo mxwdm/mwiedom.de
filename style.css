@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --body-color: #000;
+    --main-color: #161616;
+    --nav-footer-color: #131313;
+    --text-color: #fff;
+    --secondary-text-color: #b3b3b3;
+    --link-text-color: #63c48b;
+    --selection-background-color: #63c48b50;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+        filter: blur(6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+html,
+body {
+    color: var(--text-color);
+    background-color: var(--body-color);
+    font-family: "Poppins";
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--selection-background-color)
+}
+
+a {
+    color: var(--link-text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    background-color: var(--nav-footer-color);
+    margin: -8px;
+    padding: 26px 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 11000;
+}
+
+nav .logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+nav .logo a {
+    color: var(--text-color);
+}
+
+nav .logo a:hover {
+    text-decoration: none;
+}
+
+nav .links {
+    font-size: 20px;
+    margin: 3px 45px 0 0;
+}
+
+nav .links a {
+    position: relative;
+    margin: 0 0 0 15px;
+    color: var(--text-color);
+    transition: .4s ease;
+}
+
+nav .links a::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    background-color: var(--text-color);
+    height: 2px;
+    bottom: -3px;
+    opacity: 0;
+    transition: .2s ease;
+}
+
+nav .links a:hover {
+    text-decoration: none;
+    color: var(--link-text-color);
+}
+
+nav .links a:hover::before {
+    opacity: 1;
+    background-color: var(--link-text-color);
+    transform: scaleX(1.2);
+}
+
+nav .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    cursor: pointer;
+    float: right;
+    position: fixed;
+    background-color: var(--nav-color);
+    padding: 12px 0;
+    right: 20px;
+    z-index: 4;
+}
+
+.nav-open .burger {
+    display: block;
+    z-index: 10000;
+    position: fixed;
+    right: 20px;
+}
+
+.nav-open .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--nav-footer-color);
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    height: 80px;
+    z-index: 9999;
+}
+
+.nav-open .burger .line:nth-child(1) {
+    transform: translateY(5px);
+}
+
+.nav-open .burger .line:nth-child(2) {
+    opacity: 0;
+    transform: translateY(-5px);  
+}
+
+.burger .line {
+    width: 100%;
+    height: 2.4px;
+    background-color: var(--text-color);
+    transition: all .2s ease-in-out;
+    z-index: 9999;
+    margin: 4px 0;
+    border-radius: 50px;
+}
+
+header {
+    background: url(Images/header.JPEG);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 650px;
+    margin: -8px;
+    transition: .5s ease;
+}
+
+header .page-title {
+    padding: 185px 0 0 0;
+    text-align: center;
+}
+
+.userlogo {
+    margin: 20px 0 0 0;
+    width: 200px;
+    border-radius: 50%;
+    animation: 1s cubic-bezier(0.64, 0.1, 0.34, 0.94) 0s 1 slideInFromTop;
+}
+
+.page-title .nickname {
+    font-size: 50px;
+    margin: -10px 0 -20px 0;
+    animation: 1.5s cubic-bezier(0.64, 0.1, 0.34, 0.94) 0s 1 slideInFromTop;
+}
+
+.page-title .name {
+    animation: 2s cubic-bezier(0.64, 0.1, 0.34, 0.94) 0s 1 slideInFromTop;
+}
+
+main {
+    padding: 30px 10%;
+}
+
+.backbttn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 0 0 20px;
+    cursor: pointer;
+}
+
+
+.headline {
+    margin: 0 0 -10px 0;
+    font-size: 40px;
+}
+
+.subheadline {
+    margin: 30px 0 -15px 0;
+}
+
+.line {
+    display: flex;
+}
+
+.widget {
+    background-color: var(--main-color);
+    padding: 30px;
+    border-radius: 25px;
+    transition: .3s ease;
+    border: solid 2px transparent;
+}
+
+.widget .headline {
+    margin: 0 0 0 0;
+}
+
+.widget:hover {
+    transform: scale(1.02);
+    border: solid 2px var(--secondary-text-color);
+}
+
+#tiktok, #instagram {
+    width: 50%;
+}
+
+#tiktok {
+    margin: 0 10px 20px 0;
+}
+
+#instagram {
+    margin: 0 0 20px 10px;
+}
+
+#E-Mail {
+    margin: 0 0 20px 0;
+}
+
+button {
+    position: relative;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    font-family: "Poppins";
+    font-weight: 600;
+    width: 100%;
+    background-color: var(--link-text-color);
+    border: none;
+    border-radius: 50px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+a button {
+    color: var(--body-color);
+}
+
+button .icon {
+    position: absolute;
+    font-size: 35px;
+    right: 0;
+    transform: translateX(-30px) translateY(-4.5px);
+    opacity: 0;
+    transition: .2s ease;
+}
+
+button:hover {
+    background-color: var(--text-color);
+}
+
+button:hover .icon {
+    opacity: 1;
+    transform: translateX(-10px) translateY(-4.5px);
+}
+
+#setup-imgs {
+    margin: 0 0 20px 0;
+}
+
+.pictures {
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.profile {
+    position: relative;
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 35px;
+    margin: 0 0 30px 0;
+    transition: .4s ease;
+}
+
+.img {
+    height: 300px;
+    width: 300px;
+    border-radius: 30px;
+    margin: 0 0 10px 0;
+    transition: .4s ease;
+    margin: 0 0 30px 0;
+}
+
+#one .img {
+    background: url(setup-imgs/Images/1.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#two .img {
+    background: url(setup-imgs/Images/2.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#three .img {
+    background: url(setup-imgs/Images/3.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#four .img {
+    background: url(setup-imgs/Images/4.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#five .img {
+    background: url(setup-imgs/Images/5.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#six .img {
+    background: url(setup-imgs/Images/6.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#seven .img {
+    background: url(setup-imgs/Images/7.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#eight .img {
+    background: url(setup-imgs/Images/8.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#nine .img {
+    background: url(setup-imgs/Images/9.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#ten .img {
+    background: url(setup-imgs/Images/10.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#eleven .img {
+    background: url(setup-imgs/Images/11.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#twelve .img {
+    background: url(setup-imgs/Images/12.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#thirteen .img {
+    background: url(setup-imgs/Images/13.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#fourteen .img {
+    background: url(setup-imgs/Images/14.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+#fifteen .img {
+    background: url(setup-imgs/Images/15.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+.profile .description {
+    position: absolute;
+    transform: translateX(130px) translateY(-22px);
+    transition: .3s ease;
+}
+
+.profile:hover {
+    background-color: var(--selection-background-color);
+}
+
+.profile:hover .img {
+    height: 330px;
+    margin-bottom: -30px;
+}
+
+.profile:hover .description {
+    filter: blur(6px);
+    color: transparent;
+    transform: translateY(12px) translateX(130px);
+}
+
+.info {
+    text-align: center;
+    font-weight: 700;
+}
+
+iframe {
+    margin: 10px 0 0 0;
+    width: 100%;
+    height: 425px;
+    border: none;
+    border-radius: 20px;
+}
+
+footer {
+    padding: 15px;
+    margin: -8px;
+    background-color: var(--nav-footer-color);
+    text-align: center;
+}
+
+@media screen and (max-width: 1736px) {
+    .line {
+        flex-wrap: wrap;
+    }
+
+    #tiktok, #instagram {
+        width: 100%;
+    }
+
+    #tiktok {
+        margin: 0 0 20px 0;
+    }
+
+    #instagram {
+        margin: 0 0 20px 0;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    
+    
+    main {
+        padding: 30px 10px;
+    }
+
+    
+}
+
+@media screen and (max-width: 651px) {
+
+    nav .links {
+        display: none;
+    }
+
+    nav .burger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 585px) {
+    header {
+        background-attachment: scroll;
+        background-position-x: -145px;
+        height: 400px;
+    }
+
+    header .page-title {
+        padding: 120px 0 0 0;
+    }
+
+    .page-title img {
+        width: 100px;
+    }
+
+    .widget:hover {
+        border: solid 2px transparent;
+    }
+
+    button:hover .icon{
+        opacity: 0;
+    }
+}
